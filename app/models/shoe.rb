@@ -1,2 +1,0 @@
-class Shoe < ApplicationRecord
-end
