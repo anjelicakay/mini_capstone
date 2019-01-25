@@ -10,6 +10,11 @@ class Product < ApplicationRecord
   validates :price, presence: true
 
 
+  def supplier
+    Supplier.find_by(id: self.supplier_id)
+  end
+
+
   def is_discounted?
     price < 2
   end
