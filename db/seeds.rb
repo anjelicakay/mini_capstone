@@ -38,25 +38,21 @@
 #   {name: "Ina Garten", email: "ina@gmail.com", password_digest: "$2a$10$e1MNYfpaCKRk4Gm/B/64J.B9xD3EXmPrp1w8aysOeiPHDsyMSOThW", admin: true}
 # ])
 
-Category.create([
-  {name: "Donut"},
-  {name: "Gluten Free"},
-  {name: "Pastry"}
-])
+# Category.create([
+#   {name: "Donut"},
+#   {name: "Gluten Free"},
+#   {name: "Pastry"}
+# ])
 
-ProductCategory.create([
-  {product_id: 1, category_id: 1},
-  {product_id: 3, category_id: 1},
-  {product_id: 4, category_id: 1},
-  {product_id: 5, category_id: 1},
-  {product_id: 6, category_id: 1},
-  {product_id: 7, category_id: 1}
-])
+# ProductCategory.create([
+#   {product_id: 1, category_id: 1},
+#   {product_id: 3, category_id: 1},
+#   {product_id: 4, category_id: 1},
+#   {product_id: 5, category_id: 1},
+#   {product_id: 6, category_id: 1},
+#   {product_id: 7, category_id: 1},
+#   {product_id: 7, category_id: 2},
+#   {product_id: 8, category_id: 3}
+# ])
 
-ProductCategory.create([
-  {product_id: 7, category_id: 2}
-])
 
-ProductCategory.create([
-  {product_id: 8, category_id: 3}
-])
