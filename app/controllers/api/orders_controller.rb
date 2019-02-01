@@ -1,11 +1,14 @@
 class Api::OrdersController < ApplicationController
+  before_action :authenticate_user, only: [:index, :create]
+
   def index
-    @orders = Order.all
-    render 'index.json.jbuilder'
+    if current_user
+      @orders = current_user.orders
+      render 'index.json.jbuilder' 
+    end  
   end
 
   def create
-
     product = Product.find(params[:product_id])
     calculated_subtotal = params[:quantity].to_i * product.price
     calculated_tax = calculated_subtotal * 0.09
@@ -24,7 +27,7 @@ class Api::OrdersController < ApplicationController
       render 'show.json.jbuilder'
     else
       render json: {errors: @order.errors.full_messages}, status: :unprocessable_entity
-    end    
+    end      
   end
 
   def show
