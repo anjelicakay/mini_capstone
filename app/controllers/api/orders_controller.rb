@@ -16,14 +16,15 @@ class Api::OrdersController < ApplicationController
 
     @order = Order.new(
                             user_id: current_user.id,
-                            product_id: params[:product_id],
-                            quantity: params[:quantity],
                             subtotal: calculated_subtotal,
                             tax: calculated_tax,
                             total: calculated_total
                           )
 
     if @order.save
+      purchased_items = CartedProduct.all.where(user_id: current_user.id, status: "carted")
+      purchased_items.each do 
+      end  
       render 'show.json.jbuilder'
     else
       render json: {errors: @order.errors.full_messages}, status: :unprocessable_entity
